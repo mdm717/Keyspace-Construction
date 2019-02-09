@@ -1,0 +1,155 @@
+Working Directory
+
+direc [directory] twoLargeFiles[directory]  invertedIndex.c  Makefile tester.txt [file]
+=====================
+tester.txt [file]
+
+this is just a simple file test to see if a single file would work
+=====================
+twoLargeFiles [directory]
+
+aliceCh1.txt [file]  wowCh1.txt [file]
+=====================
+aliceCh1.txt [file]
+
+(The full chapter 1 from Alice in Wonderland)
+=====================
+wowCh1.txt [file]
+
+(The full chapter 1 from War of Worlds)
+=====================
+direc [directory]
+
+newest.txt [file]  next [directory] that.txt [file]  this.txt[file]
+
+======================
+newest.txt [file]
+
+hey hey hey hey hey
+======================
+that.txt [file]
+
+
+hey hey hey hey hey hey yea yea yea yea yea
+=======================
+this.txt [file]
+
+yea yea whatever hey hey hey hey
+=======================
+next [directory]
+
+aaa.txt [file]  har.txt [file]  hey.txt [file]  new [directory]  this.txt [file]
+=======================
+aaa.txt [file]
+
+345systems 323 
+another$34word
+456745program 1234number word
+========================
+har.txt [file]
+
+man man man man haha
+========================
+hey.txt [file]
+
+yea haha
+========================
+this.txt [file]
+
+yea yea
+========================
+new [directory]
+
+test.txt [file]
+========================
+test.txt [file]
+
+systems systems programming
+another project 
+34numb3r
+========================
+
+
+Test 1: File Does Not Exist
+	input: ./invertedIndex output.txt fakefile.txt
+	output: File or Directory Does Not Exist.
+
+Test 2: Not Enough Arguments
+	input: ./invertedIndex output.txt
+	output: Wrong Number of Arguments
+
+Test 3: Singular File 
+	input: ./invertedIndex output.txt tester.txt
+	output: 
+<?xml version="1.0" encoding="UTF-8"?>
+<fileIndex>
+        <word text ="a">
+                <file name="tester.txt"> 2 </file>
+        </word>
+        <word text ="file">
+                <file name="tester.txt"> 2 </file>
+        </word>
+        <word text ="if">
+                <file name="tester.txt"> 1 </file>
+        </word>
+        <word text ="is">
+                <file name="tester.txt"> 1 </file>
+        </word>
+        <word text ="just">
+                <file name="tester.txt"> 1 </file>
+        </word>
+        <word text ="see">
+                <file name="tester.txt"> 1 </file>
+        </word>
+        <word text ="simple">
+                <file name="tester.txt"> 1 </file>
+        </word>
+        <word text ="single">
+                <file name="tester.txt"> 1 </file>
+        </word>
+        <word text ="test">
+                <file name="tester.txt"> 1 </file>
+        </word>
+        <word text ="this">
+                <file name="tester.txt"> 1 </file>
+        </word>
+        <word text ="to">
+                <file name="tester.txt"> 1 </file>
+        </word>
+        <word text ="work">
+                <file name="tester.txt"> 1 </file>
+        </word>
+        <word text ="would">
+                <file name="tester.txt"> 1 </file>
+        </word>
+</fileIndex>
+
+Test 4: Full Directory
+	input: ./invertedIndex output.txt direc
+	output: full list of every word in every file, sorted and in above format
+
+Test 5: Identical Words in Identical Named Files in Different Directories
+	input: ./invertedIndex output.txt direc
+	output: frequency of identical words in identical files added together, with duplicates being deleted
+
+Test 6: Large Files With Many Words
+	input: ./invertedIndex output.txt twoLargeFiles
+	output: full list of every word in every file, sorted in above format, with no segmentation faults'
+
+Test 7: Output Filename Already Exists [wanting to overwrite]
+	input: ./invertedIndex alreadyExists.txt direc
+	output:
+		alreadyExists.txt already exists.  Would you like to overwrite it? (y/n)
+		y
+		[overwrites file]
+
+Test 8: Output Filename Already Exists [renaming file]
+	input: ./invertedIndex alreadyExists.txt direc
+	output:
+		alreadyExists.txt already exists.  Would you like to overwrite it? (y/n)
+		n
+		What would you like to rename the file? (With file type '.xxx')
+		somethingNew.txt
+		[outputs information to somethingNew.txt]
+
+  
